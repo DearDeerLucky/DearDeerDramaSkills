@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="按顺序整理剧本、角色、场景、道具、分镜、声音和关键帧的短剧视频前资料工作台。">
+<title>Dear Deer · 视频前资料工作台</title>
+<link rel="stylesheet" href="styles.css">
+<script src="project-data.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#workspace">跳到资料节点</a>
+<header class="topbar">
+<a class="brand" href="#overview"><span class="brand-mark" aria-hidden="true">鹿</span><span>短剧制作工作台<small>从资料到镜头</small></span></a>
+<div class="top-actions">
+<label class="project-switch"><span class="sr-only">选择项目</span><select id="projectSelect"></select></label>
+<button class="button secondary" id="importButton">导入清单</button>
+<button class="button secondary" id="exportButton">导出清单</button>
+</div>
+</header>
+<div class="app-shell">
+<aside class="sidebar">
+<div class="sidebar-label">视频前 · 按顺序准备</div>
+<nav id="nodeNav" aria-label="制作节点"></nav>
+<div class="sidebar-note"><span class="small-dot"></span>资料保存在当前浏览器<br>原素材文件保持原样</div>
+</aside>
+<main id="workspace">
+<section class="overview" id="overview">
+<div class="eyebrow">PRE-PRODUCTION / 开始视频之前</div>
+<div class="overview-heading"><div><h1 id="projectTitle"></h1><p id="projectSubtitle"></p></div><button class="button primary" id="checkButton">检查视频启动资料 <span aria-hidden="true">↗</span></button></div>
+<div class="summary-grid" id="summary"></div>
+<div class="legend"><span><i class="dot green"></i>已选用</span><span><i class="dot amber"></i>已有候选</span><span><i class="dot gray"></i>等待添加</span><p>“已有资料”表示文件已放入；是否采用、是否通过检查分别记录。</p></div>
+</section>
+<section class="project-settings">
+<details id="settingsDetails"><summary><span>制作规格</span><span class="spec-line" id="specLine"></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+<form class="metadata-grid" id="metadataForm">
+<label>作品名称<input name="title" autocomplete="off" maxlength="80"></label>
+<label>当前集号<input name="episode" autocomplete="off" maxlength="24"></label>
+<label>本集目标时长（秒）<input name="duration" type="number" min="1" max="7200" placeholder="等待填写"></label>
+<label>正式画幅<select name="ratio"><option value="">等待选择</option><option>9:16</option><option>16:9</option><option>1:1</option><option>4:3</option></select></label>
+<label>语言<input name="language" maxlength="60"></label>
+<label>表现形式<input name="form" placeholder="二维漫剧／三维CG／真人风" maxlength="100"></label>
+<label>视觉风格<input name="style" placeholder="等待填写" maxlength="140"></label>
+<label>计划总集数<input name="totalEpisodes" type="number" min="1" max="9999" placeholder="等待填写"></label>
+</form></details>
+</section>
+<div class="toolbar"><p id="coverageHint"></p><div class="filters" role="group" aria-label="节点显示范围"><button class="filter active" data-filter="all">全部节点</button><button class="filter" data-filter="missing">只看待补</button><button class="filter" data-filter="available">已有资料</button></div></div>
+<section id="characterDesign" class="character-design" aria-label="角色设计多轮选择"></section>
+<div id="nodes"></div>
+<footer class="page-footer"><div><strong>资料齐了，再进入视频镜头。</strong><p>后续顺序：视频镜头 → 剪辑字幕 → 成片回看 → 导出交付</p></div><span id="saveState" aria-live="polite">本机保存</span></footer>
+</main>
+</div>
+<dialog id="viewer" aria-labelledby="viewerTitle"><div class="dialog-header"><div><h2 id="viewerTitle"></h2><p id="viewerMeta"></p></div><button class="icon-button" id="closeViewer" aria-label="关闭资料预览">×</button></div><div class="viewer-body" id="viewerBody"></div><div class="dialog-footer" id="viewerFooter"></div></dialog>
+<dialog id="addDialog" aria-labelledby="addTitle"><form id="addForm"><div class="dialog-header"><h2 id="addTitle">新增资料位</h2><button type="button" class="icon-button" id="closeAdd" aria-label="取消新增">×</button></div><div class="add-form"><label>资料名称<input name="title" required maxlength="100" placeholder="例如：角色02定妆图"></label><label>资料形式<select name="kind"><option value="document">文档</option><option value="image">图片</option><option value="audio">音频</option><option value="video">验证片段</option><option value="text">文字／提示词</option></select></label><label class="check-label"><input type="checkbox" name="required" checked>此资料位是本批必需</label><p class="field-help">新增后显示“等待添加”，不会自动生成素材。</p></div><div class="dialog-footer"><button type="button" class="button secondary" id="cancelAdd">取消</button><button type="submit" class="button primary">建立资料位</button></div></form></dialog>
+<input id="fileInput" type="file" multiple hidden accept="image/png,image/jpeg,image/webp,image/gif,application/pdf,text/plain,text/markdown,application/json,.md,.txt,.json,.pdf,.docx,.srt,.csv,audio/mpeg,audio/wav,audio/mp4,audio/x-m4a,video/mp4,.mp3,.wav,.m4a,.mp4">
+<input id="importInput" type="file" hidden accept=".json,application/json">
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript><p class="no-script">请启用浏览器JavaScript以查看资料、添加文件和记录节点状态。</p></noscript>
+</body></html>

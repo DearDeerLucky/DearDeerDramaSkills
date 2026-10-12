@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dear Deer 3D CG 角色资产"
+  short_description: "询问创作期望、比较五个方向、多轮细化并生成可复用的角色资产图"
+  default_prompt: "使用 $dear-deer-cg-character-assets，根据我的角色素材询问期望，提出五个具体方向，再逐轮细化面部、服装与配件。"

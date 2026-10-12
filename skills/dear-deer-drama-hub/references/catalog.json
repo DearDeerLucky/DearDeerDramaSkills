@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "project": "DearDeerDramaSkills",
+  "version": "0.1.0",
+  "skills": [
+    {
+      "id": "dear-deer-drama-hub",
+      "display_name": "短剧 Skill 总管理",
+      "distribution": "bundled",
+      "source": "skills/dear-deer-drama-hub",
+      "purpose": "能力目录、入口路由、本机盘点、安装和版本维护",
+      "modes": [
+        "catalog",
+        "route",
+        "maintain"
+      ]
+    },
+    {
+      "id": "dear-deer-drama-workbench",
+      "display_name": "短漫剧创作工作台",
+      "distribution": "bundled",
+      "source": "skills/dear-deer-drama-workbench",
+      "purpose": "N00—N15 制作流程、资产卡、任务卡、资料网页和成片交接",
+      "modes": [
+        "plan",
+        "create",
+        "resume",
+        "web-workbench"
+      ]
+    },
+    {
+      "id": "dear-deer-cg-character-assets",
+      "display_name": "3D CG 角色资产",
+      "distribution": "bundled",
+      "source": "skills/dear-deer-cg-character-assets",
+      "purpose": "询问期望、五方向、多轮细化、设计锁定、生成检查与修复",
+      "modes": [
+        "discover",
+        "design",
+        "convert",
+        "generate",
+        "repair"
+      ]
+    },
+    {
+      "id": "imagegen",
+      "display_name": "图片生成与编辑",
+      "distribution": "external",
+      "lookup_name": "imagegen",
+      "provider": "Codex",
+      "purpose": "实际角色、场景、道具与关键帧图像；CG图片生成依赖可用图像工具"
+    },
+    {
+      "id": "remotion:remotion-best-practices",
+      "display_name": "Remotion 路由",
+      "distribution": "external",
+      "lookup_name": "remotion-best-practices",
+      "provider": "Remotion plugin",
+      "purpose": "进入现有图片、视频与音轨的时间线制作"
+    },
+    {
+      "id": "remotion:remotion-create",
+      "display_name": "视频与动态漫画编排",
+      "distribution": "external",
+      "lookup_name": "remotion-create",
+      "provider": "Remotion plugin",
+      "purpose": "编排素材、字幕、平移和缩放；AI人物动作另需实际生成服务"
+    },
+    {
+      "id": "remotion:remotion-captions",
+      "display_name": "字幕与音轨转写",
+      "distribution": "external",
+      "lookup_name": "remotion-captions",
+      "provider": "Remotion plugin",
+      "purpose": "根据最终音轨处理字幕"
+    },
+    {
+      "id": "remotion:remotion-render",
+      "display_name": "视频导出",
+      "distribution": "external",
+      "lookup_name": "remotion-render",
+      "provider": "Remotion plugin",
+      "purpose": "从实际时间线导出可播放文件"
+    },
+    {
+      "id": "sites:sites",
+      "display_name": "网页扩展与发布",
+      "distribution": "external",
+      "lookup_name": "sites",
+      "provider": "Sites plugin",
+      "purpose": "用户要求扩展资料网页或明确公开部署时接入"
+    },
+    {
+      "id": "humanizer-zh",
+      "display_name": "中文表达调整",
+      "distribution": "external",
+      "lookup_name": "humanizer-zh",
+      "provider": "Installed user skill",
+      "purpose": "按需调整中文文案表达，保留事实和台词目的"
+    },
+    {
+      "id": "skill-creator",
+      "display_name": "专用 Skill 补全",
+      "distribution": "external",
+      "lookup_name": "skill-creator",
+      "provider": "Codex system skill",
+      "purpose": "用户要求扩展或维护能力时使用"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "ai-video",
+      "purpose": "真实AI人物动作视频生成",
+      "status": "tool-binding-required"
+    },
+    {
+      "id": "tts",
+      "purpose": "正式角色配音与音效生成",
+      "status": "tool-binding-required"
+    },
+    {
+      "id": "3d-model",
+      "purpose": "可绑定的工程三维模型",
+      "status": "outside-cg-image-skill"
+    }
+  ]
+}
