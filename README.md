@@ -12,7 +12,7 @@
 | `dear-deer-drama-workbench` | N00—N15 制作流程、卡片、资料网页、交接和检查 | [SKILL.md](skills/dear-deer-drama-workbench/SKILL.md) |
 | `dear-deer-cg-character-assets` | 期望询问、五方向、多轮细化、CG资产图及定向修复 | [SKILL.md](skills/dear-deer-cg-character-assets/SKILL.md) |
 
-CG角色输出为渲染外观的图片。可绑定的工程模型、真实AI人物动作视频、正式TTS分别需要对应工具；能力状态见[目录](skills/dear-deer-drama-hub/references/catalog.json)。本地资料网页支持实际素材预览、待补占位、版本选用、本机保存、导入导出与角色多轮暂选。
+CG角色输出为渲染外观的图片。实际创建角色时，五方向及脸发、衣装选择默认配对应可见参考示例；只做文字或维护 Skill 时不自动生图。示例和正式母版分别记录，详见[选择示例规范](skills/dear-deer-cg-character-assets/references/selection-examples.md)。可绑定的工程模型、真实AI人物动作视频、正式TTS分别需要对应工具；能力状态见[目录](skills/dear-deer-drama-hub/references/catalog.json)。本地资料网页支持实际素材预览、待补占位、版本选用、本机保存、导入导出与角色多轮暂选。
 
 ## 开始使用
 

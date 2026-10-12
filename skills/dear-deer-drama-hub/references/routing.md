@@ -6,7 +6,7 @@
 |---|---|---|
 | 从创意开始／继续剧本 | dear-deer-drama-workbench | 制作卡与当前节点；按需读取 N01／N02 |
 | 单独试用任务卡、场景卡或道具卡 | dear-deer-drama-workbench | 对应模板与必要输入，独立保存试用 |
-| 做CG角色／五方向／组合局部 | dear-deer-cg-character-assets | 询问、方向与细化规范；保留已有选择 |
+| 做CG角色／五方向／组合局部 | dear-deer-cg-character-assets | 创建时选择文案配对应示例图；读取询问、方向与细化规范，保留已有选择；文字试用不自动生图 |
 | 转CG／修眉或衣装位置 | dear-deer-cg-character-assets | 实际参考、生成与质量规范；不重新设计已选身份 |
 | 生成角色场景道具图／关键帧 | 对应资产节点＋imagegen | 用户明确的实际生成范围；当前工具与参考支持 |
 | 网页整理资料或比较五方向 | dear-deer-drama-workbench 网页模式 | 使用自有模板和实际素材，缺项留等待添加 |
