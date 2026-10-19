@@ -63,4 +63,6 @@ MiniMovie 的项目绑定、具体节点与验证记录保存在创作目录或�
 
 ## 维护版本
 
+0.2.1 补充 [整集制作与交付验收](skills/dear-deer-drama-workbench/references/episodeDelivery.md)：实际剪入时间线、原声保留或替换、任务续做与多设备交接、技术检查和整集视听证据。此次为规范与模板更新，不代表新增媒体工具或完成整集制作验收。
+
 在项目源文件修改，验证后提交到 Git。安装副本用管理脚本显式同步。新增技能先完成可执行指令与小样，再登记目录；保留未实现能力的缺口状态。详见 [AGENTS.md](AGENTS.md) 与[路由维护说明](skills/dear-deer-drama-hub/references/routing.md)。

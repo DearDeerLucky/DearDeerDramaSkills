@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "DearDeerDramaSkills",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "skills": [
     {
       "id": "dear-deer-drama-hub",
@@ -123,6 +123,12 @@
       "status": "partially-provided-by-runtime",
       "provided_by": "toonflowMcp",
       "remaining": "五秒后期离线配音与原生有声已接通，通用角色 TTS 和音效能力仍需绑定"
+    },
+    {
+      "id": "episode-delivery",
+      "purpose": "多镜头整集编排、混音与交付验收",
+      "status": "workflow-defined-end-to-end-verification-required",
+      "remaining": "已提供整集制作与验收规范；实际剪辑工具、完整导出及整集视听须逐项目验证，单镜样片不代表整集通过"
     },
     {
       "id": "3d-model",
