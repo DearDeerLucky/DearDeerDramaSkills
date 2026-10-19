@@ -51,6 +51,8 @@ N04 的三维 CG 角色设计调用 `dear-deer-cg-character-assets`：期望询�
 
 实际创建 CG 角色时，五方向和脸发／衣装各轮选择默认交付文字方案与对应可见参考示例，按角色专用 Skill 的选择示例规范复用已有图或生成最小小样；明确只做文字或维护 Skill 时不自动生图。角色图片不是工程三维模型。选择记录与实际图像可进入网页角色比较区；网页暂选不自动调用媒体工具或替换正式资产。
 
+完整CG角色包默认采用专用Skill的[生产规范](../dear-deer-cg-character-assets/references/production-package.md)和[IP面板交付标准](../dear-deer-cg-character-assets/references/ip-panel-delivery.md)：11张独立原图、4K总览PNG、单页PDF及提示词／锁定卡／检查清单。镜头分别引用独立身份、全身和细节图；面板用于审阅与交接。局部任务、特殊拓扑和用户指定范围按实际约定调整。
+
 ## 工作台必须能续做
 
 每个环节节点保存：编号与标题、用途、依赖、输入版本、交付物、工具承载形式、专用 Skill 名称／标识、Skill 状态、制作状态、验收要点、下一步。

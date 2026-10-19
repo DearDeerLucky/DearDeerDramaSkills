@@ -10,7 +10,7 @@
 |---|---|---|
 | `dear-deer-drama-hub` | 总管理、能力目录、路由、安装与版本维护 | [SKILL.md](skills/dear-deer-drama-hub/SKILL.md) |
 | `dear-deer-drama-workbench` | N00—N15 制作流程、卡片、资料网页、交接和检查 | [SKILL.md](skills/dear-deer-drama-workbench/SKILL.md) |
-| `dear-deer-cg-character-assets` | 期望询问、五方向、多轮细化、CG资产图及定向修复 | [SKILL.md](skills/dear-deer-cg-character-assets/SKILL.md) |
+| `dear-deer-cg-character-assets` | 角色探索、细化与修复、11张制作原图、IP面板及交接包 | [SKILL.md](skills/dear-deer-cg-character-assets/SKILL.md) |
 
 CG角色输出为渲染外观的图片。实际创建角色时，五方向及脸发、衣装选择默认配对应可见参考示例；只做文字或维护 Skill 时不自动生图。示例和正式母版分别记录，详见[选择示例规范](skills/dear-deer-cg-character-assets/references/selection-examples.md)。可绑定的工程模型、真实AI人物动作视频、正式TTS分别需要对应工具；能力状态见[目录](skills/dear-deer-drama-hub/references/catalog.json)。本地资料网页支持实际素材预览、待补占位、版本选用、本机保存、导入导出与角色多轮暂选。
 
@@ -62,6 +62,8 @@ MiniMovie 的项目绑定、具体节点与验证记录保存在创作目录或�
 [能力目录](skills/dear-deer-drama-hub/references/catalog.json) 登记 imagegen、Remotion、Sites、humanizer-zh 和 skill-creator。运行 `python3 scripts/skills.py doctor` 可查看当前本机定义；真正操作仍需当前工具、输入材料和具体执行范围。外部Skill的定义、插件和服务由各自提供方管理。
 
 ## 维护版本
+
+0.2.2 将完整CG角色包设为后续默认标准：[角色资产生产](skills/dear-deer-cg-character-assets/references/production-package.md)和[IP面板交付](skills/dear-deer-cg-character-assets/references/ip-panel-delivery.md)。标准人类角色包包含11张独立原图、3840×2160总览PNG、单页PDF、实际提示词、锁定卡、检查记录、便携清单和ZIP；从已选身份续做、逐图核验，再由原图固定排版。用户指定的小范围与特殊拓扑按实际任务调整，不把静态图片验收外推为动作、绑定或整集通过。
 
 0.2.1 补充 [整集制作与交付验收](skills/dear-deer-drama-workbench/references/episodeDelivery.md)：实际剪入时间线、原声保留或替换、任务续做与多设备交接、技术检查和整集视听证据。此次为规范与模板更新，不代表新增媒体工具或完成整集制作验收。
 

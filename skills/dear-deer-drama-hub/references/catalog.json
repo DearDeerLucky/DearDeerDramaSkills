@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "DearDeerDramaSkills",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "skills": [
     {
       "id": "dear-deer-drama-hub",
@@ -35,13 +35,15 @@
       "display_name": "3D CG 角色资产",
       "distribution": "bundled",
       "source": "skills/dear-deer-cg-character-assets",
-      "purpose": "询问期望、五方向文案与参考示例图、多轮细化、设计锁定、生成检查与修复",
+      "purpose": "角色探索与细化、设计锁定、11张原图生产检查、4K IP面板及可续做交接包",
       "modes": [
         "discover",
         "design",
         "convert",
         "generate",
-        "repair"
+        "repair",
+        "production-package",
+        "ip-panel-delivery"
       ]
     },
     {
