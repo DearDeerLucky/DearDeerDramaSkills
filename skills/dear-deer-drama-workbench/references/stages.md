@@ -2,6 +2,8 @@
 
 只读当前需要的环节。下面是制作依赖，不是要求用户一次完成全部文件。通过标准用于决定能否进入下一环节；可先写草稿，待上游确定后再生成正式素材。
 
+采用 LibTV 资料结构时，按 [libtvStandards.md](libtvStandards.md) 对应 N01—N07 的字段与连续性要求处理；实际写作或生成提示按需读 [promptTemplates.md](promptTemplates.md)。在 Toonflow 执行时再读 [toonflowBridge.md](toonflowBridge.md)，不改变这里的节点编号和其他平台路线。
+
 ## N00 制作卡与试做范围
 
 输入：创意、已有故事、参考图或剧本。

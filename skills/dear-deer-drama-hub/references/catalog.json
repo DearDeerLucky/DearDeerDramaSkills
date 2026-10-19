@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "project": "DearDeerDramaSkills",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "skills": [
     {
       "id": "dear-deer-drama-hub",
-      "display_name": "短剧 Skill 总管理",
+      "display_name": "漫剧",
       "distribution": "bundled",
       "source": "skills/dear-deer-drama-hub",
-      "purpose": "能力目录、入口路由、本机盘点、安装和版本维护",
+      "purpose": "漫剧总入口、能力路由、本机盘点、安装和版本维护",
       "modes": [
         "catalog",
         "route",
@@ -20,12 +20,14 @@
       "display_name": "短漫剧创作工作台",
       "distribution": "bundled",
       "source": "skills/dear-deer-drama-workbench",
-      "purpose": "N00—N15 制作流程、资产卡、任务卡、资料网页和成片交接",
+      "purpose": "N00—N15、LibTV 制作标准与提示词、五栏目剧本、Toonflow MCP 和成片交接",
       "modes": [
         "plan",
         "create",
         "resume",
-        "web-workbench"
+        "web-workbench",
+        "libtv-reference",
+        "toonflow-mcp"
       ]
     },
     {
@@ -111,17 +113,49 @@
     {
       "id": "ai-video",
       "purpose": "真实AI人物动作视频生成",
-      "status": "tool-binding-required"
+      "status": "conditional-runtime-binding",
+      "provided_by": "toonflowMcp",
+      "remaining": "MiniMovie 已有单图五秒分支；其他环境及新镜头需独立核验"
     },
     {
       "id": "tts",
       "purpose": "正式角色配音与音效生成",
-      "status": "tool-binding-required"
+      "status": "partially-provided-by-runtime",
+      "provided_by": "toonflowMcp",
+      "remaining": "五秒后期离线配音与原生有声已接通，通用角色 TTS 和音效能力仍需绑定"
     },
     {
       "id": "3d-model",
       "purpose": "可绑定的工程三维模型",
       "status": "outside-cg-image-skill"
+    }
+  ],
+  "integrations": [
+    {
+      "id": "toonflowMcp",
+      "provider": "User-configured Toonflow MCP",
+      "purpose": "五栏目剧本与分集、素材回传及本地媒体流程",
+      "reference": "skills/dear-deer-drama-workbench/references/toonflowBridge.md",
+      "discovery_tools": [
+        "getAppState",
+        "listMediaModels",
+        "skillOperator",
+        "scriptDocuments"
+      ],
+      "status": "workflow-implemented-runtime-binding-required",
+      "runtime_profile": ".miniMovieSkill.json",
+      "capabilities": [
+        "script-documents",
+        "image-upscale",
+        "silent-image-to-video",
+        "native-audio-video",
+        "post-voice-subtitles-music"
+      ],
+      "limits": [
+        "per-device-connection-verification",
+        "per-shot-media-quality-review",
+        "no-automatic-multi-shot-editing"
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 ---
 name: dear-deer-drama-workbench
-description: "带新手在 Codex 制作 AI 短剧或漫剧，把故事、角色场景道具卡、分镜、镜头、声音和剪辑串成可续做的工作台；可创建按节点整理资料的本地网页，维护已有 Skill 与待补节点。用于创作或搭建制作流程，不用于普通视频剪辑或软件开发。"
+description: "带新手制作短剧或漫剧，把剧本、角色场景道具、分镜、声音和剪辑串成可续做的工作台；适配 LibTV 五栏目制作标准与提示词、Toonflow MCP 剧本节点和本地媒体流程，也可整理资料网页。用于创作、续做、导入和流程维护，不用于普通视频剪辑或软件开发。"
 ---
 
 # Dear Deer 短漫剧创作工作台
@@ -36,6 +36,9 @@ N10 配音、音乐与音效从 N02／N07 接入 N11；N14 连续性、版本与
 - 查找、绑定或补充专用 Skill，读 [references/skill-registry.md](references/skill-registry.md)。记录中“已发现”不等于已加载或已验证。
 - 保存跨会话工作台、选择工具或对接用户指定平台，读 [references/workspace.md](references/workspace.md)。
 - 创建／更新资料网页、导入已有成果或展示角色多轮比较，读 [references/web-workbench.md](references/web-workbench.md)，复用内置模板。
+- 导入 LibTV 材料、整理五栏目剧本、资产锚点和分集制作标准，读 [references/libtvStandards.md](references/libtvStandards.md) 的当前环节。
+- 写大纲、分集、角色锚点、场景道具、分镜、视频或声音提示，按阶段选用 [references/promptTemplates.md](references/promptTemplates.md)，保留用户既定版本和授权。
+- 用户选用 MiniMovie／Toonflow 时，读 [references/toonflowBridge.md](references/toonflowBridge.md)：先只读核对实际 MCP 能力，再通过剧本文档或媒体工具操作，不直接改画布 JSON。
 
 搭建新工作台时，将 [assets/workbench-template.md](assets/workbench-template.md) 复制到创作目录，填入已有事实、当前状态和下一步；它含完整环节节点，不是空 Skill。已有工作台优先补齐，避免重复建稿。
 

@@ -31,6 +31,8 @@ python3 scripts/skills.py install --all
 
 在 Codex 中调用：
 
+「/漫剧」对应现有总管理入口 `dear-deer-drama-hub`，界面显示名为「漫剧」。这不是另建一个同名技能或保证注册了字面斜杠命令；准确调用方式如下。
+
 ```text
 $dear-deer-drama-hub 根据我当前的短剧任务，选择对应Skill。
 $dear-deer-drama-workbench 只测试任务卡设计，用我提供的素材。
@@ -52,6 +54,10 @@ AGENTS.md                        项目协作与维护约定
 `SKILL.md` 提供当前流程入口，`references/` 保存按需读取的完整规范，`assets/` 保存模板。角色方向、细节、选择与生成记录遵循同一版本链；用户的剧本、原图和制作成果保存到独立创作目录。
 
 ## 外部能力接入
+
+0.2.0 加入 [LibTV 制作标准](skills/dear-deer-drama-workbench/references/libtvStandards.md)、[可复用提示词](skills/dear-deer-drama-workbench/references/promptTemplates.md) 和 [Toonflow MCP 桥接](skills/dear-deer-drama-workbench/references/toonflowBridge.md)。保留 N00—N15、CG 五方向与选择记录；新增五栏目剧本、锚点连续性和本地媒体流程的适配。LibTV 参考来自授权可见资料，不包含隐藏系统 prompt。
+
+MiniMovie 的项目绑定、具体节点与验证记录保存在创作目录或忽略的 `.local/`；通用技能源不含本机路径、令牌和作品。服务端安装这三个相同技能后，其他设备可通过 `skillOperator` 发现并读取；客户端安装副本由原管理脚本同步。MCP 连接、旧样片与新镜头质量分别验收。
 
 [能力目录](skills/dear-deer-drama-hub/references/catalog.json) 登记 imagegen、Remotion、Sites、humanizer-zh 和 skill-creator。运行 `python3 scripts/skills.py doctor` 可查看当前本机定义；真正操作仍需当前工具、输入材料和具体执行范围。外部Skill的定义、插件和服务由各自提供方管理。
 
