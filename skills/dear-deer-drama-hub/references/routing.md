@@ -5,6 +5,7 @@
 | 用户当前任务 | 入口 | 读取范围与执行边界 |
 |---|---|---|
 | 从创意开始／继续剧本 | dear-deer-drama-workbench | 制作卡与当前节点；按需读取 N01／N02 |
+| 正反方剧本讨论／五视角审稿／图文主理汇报 | dear-deer-drama-workbench 剧本讨论模式 | 读取 references/script-review.md，固定稿件、作者目标与范围；按实际工具执行四席评审和主理裁决，不自动改稿 |
 | 单独试用任务卡、场景卡或道具卡 | dear-deer-drama-workbench | 对应模板与必要输入，独立保存试用 |
 | 做CG角色／五方向／组合局部 | dear-deer-cg-character-assets | 创建时选择文案配对应示例图；读取询问、方向与细化规范，保留已有选择；文字试用不自动生图 |
 | 转CG／修眉或衣装位置 | dear-deer-cg-character-assets | 实际参考、生成与质量规范；不重新设计已选身份 |

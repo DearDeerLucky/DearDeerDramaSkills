@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>剧本讨论 · 主理汇报模板</title>
+<style>
+:root{color-scheme:light;--paper:#f6f3ed;--ink:#25332f;--muted:#5b6862;--line:#ced7ce;--green:#285e4b;--soft:#e5eee7;--amber:#795324}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"PingFang SC",sans-serif}main{max-width:1120px;margin:auto;padding:36px 24px 60px}header{border-bottom:2px solid var(--green);padding-bottom:24px}h1{font-size:clamp(26px,4vw,40px);line-height:1.3;margin:8px 0 16px}h2{font-size:22px;margin:0 0 12px}h3{font-size:17px;margin:0 0 6px}p{margin:0 0 12px;white-space:pre-wrap;overflow-wrap:anywhere}.eyebrow,.muted{color:var(--muted)}.eyebrow{font-size:13px;letter-spacing:.08em}.meta{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px;color:var(--muted)}.notice{background:#fff2d9;border-left:4px solid var(--amber);padding:12px 16px;margin:20px 0}.summary{padding:24px 0}.columns{display:grid;grid-template-columns:1fr 1fr;gap:24px}.card{background:#fffefa;border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:20px}.summary p{font-size:19px}.review-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;align-items:start}nav{position:sticky;top:20px}nav button{display:block;width:100%;text-align:left;margin:0 0 8px;overflow-wrap:anywhere}button{font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:10px 14px;cursor:pointer}button:hover{background:var(--soft)}button[aria-pressed="true"]{background:var(--green);color:white;border-color:var(--green)}button:focus-visible{outline:3px solid #b06e22;outline-offset:3px}.switcher{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 12px}.legend{font-size:13px;color:var(--muted)}.chain{display:flex;align-items:stretch;gap:8px;margin:16px 0 12px}.chain-node{flex:1;min-width:0;border:1px solid var(--green);border-radius:8px;padding:12px;background:var(--soft);overflow-wrap:anywhere}.chain-node.inference{border-style:dashed;background:#fffefa}.chain-node.proposal{border-color:#8d642a;background:#fff2d9}.chain-node.gap{border-style:dashed;border-color:#8d642a;background:#fffefa}.chain-node small{display:block;color:var(--muted);margin:0 0 6px;font-size:12px}.chain-node b{font-size:14px;font-weight:600}.arrow{align-self:center;color:var(--muted)}blockquote{margin:12px 0 20px;padding:12px 16px;background:var(--paper);border-left:3px solid var(--line);white-space:pre-wrap;overflow-wrap:anywhere}.view{border-top:1px solid var(--line);padding-top:16px;margin-top:16px}.decision{background:var(--soft);padding:18px;border-radius:8px;margin:20px 0}.empty{padding:28px;border:1px dashed var(--line);border-radius:12px}ul{padding-left:22px}li{overflow-wrap:anywhere}footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:18px;margin-top:24px}[hidden]{display:none!important}@media(max-width:720px){main{padding:24px 16px 36px}.columns,.review-layout{grid-template-columns:1fr;gap:16px}nav{position:static}.chain{flex-direction:column}.arrow{transform:rotate(90deg)}.card{padding:18px}}
+</style>
+</head>
+<body>
+<main>
+<header><div class="eyebrow">DEAR DEER · 剧本讨论</div><h1 id="title">主理汇报模板</h1><div class="meta" id="meta"></div></header>
+<div class="notice" id="notice">这是未填充的模板，没有实际审稿结果。</div>
+<section class="summary" aria-labelledby="summary-title"><h2 id="summary-title">主理结论</h2><p id="conclusion"></p></section>
+<div class="columns"><section class="card"><h2>值得保留</h2><ul id="strengths"></ul></section><section class="card"><h2>需要你决定</h2><ul id="questions"></ul></section></div>
+<section class="review-layout" aria-label="关键争议">
+<nav aria-label="选择争议" id="issue-nav"></nav>
+<div>
+<div id="empty" class="empty">尚无争议记录。请先按审稿流程形成有原文依据的意见；没有重大问题也可以直接给出范围内结论。</div>
+<article class="card" id="issue-card" hidden>
+<h2 id="issue-title"></h2><p class="muted" id="location"></p><p class="muted" id="classification"></p>
+<div class="switcher" role="group" aria-label="图示版本"><button type="button" id="original-button" aria-pressed="true">原稿</button><button type="button" id="proposal-button" aria-pressed="false">修改建议</button></div>
+<p class="legend">标签说明：原稿事实 · 推断（虚线）· 待核验（虚线）· 修改建议（暖色）。箭头表示阅读顺序；具体因果是否成立见说明。</p>
+<section aria-label="场次图示" aria-live="polite"><div id="chain" class="chain"></div><p id="caption" class="muted"></p></section>
+<h3>原文依据</h3><blockquote id="evidence"></blockquote>
+<div id="views"></div>
+<section class="decision"><h3 id="decision"></h3><p id="reason"></p><p id="uncertainty"></p></section>
+<h3>改稿任务／保留项</h3><p id="task"></p><h3>怎样验证</h3><p id="acceptance"></p>
+</article>
+</div>
+</section>
+<footer>这是审稿建议与讨论记录。原稿事实、推断和修改建议分别标记；作者选择、实际改稿、复核与验收另记。网页不会改写原稿或向外发送内容。</footer>
+</main>
+<!-- 复制到创作目录后，只将本段替换为本轮报告数据。
+     写入 JSON 时将小于号转义为 \u003c，防止原文中的结束标签截断 script。
+     字段与节点格式见 references/script-review.md；空态不代表审稿通过。 -->
+<script id="review-data" type="application/json">
+{
+  "title": "剧本讨论 · 主理汇报模板",
+  "version": "待登记",
+  "scope": "待登记",
+  "mode": "待登记实际评审方式",
+  "status": "未填充模板；尚未审稿",
+  "conclusion": "请先登记原稿版本与本轮范围，再填入主理结论。",
+  "strengths": [],
+  "questions": [],
+  "issues": []
+}
+</script>
+<script>
+"use strict";
+const byId=id=>document.getElementById(id);
+const asText=value=>typeof value==="string"?value:"";
+let review;
+try{review=JSON.parse(byId("review-data").textContent);if(!review||typeof review!=="object"||Array.isArray(review))throw new Error("invalid data");}
+catch{review={title:"报告数据无法读取",status:"请检查 review-data JSON；当前不能显示审稿结果",issues:[]};}
+const issues=Array.isArray(review.issues)?review.issues.filter(item=>item&&typeof item==="object"):[];
+let selected=0,version="original";
+function write(id,value,fallback="未记录"){byId(id).textContent=asText(value)||fallback;}
+function list(id,values,empty){const host=byId(id);host.replaceChildren();const items=Array.isArray(values)?values.filter(v=>typeof v==="string"):[];for(const value of items.length?items:[empty]){const li=document.createElement("li");li.textContent=value;host.append(li);}}
+write("title",review.title,"剧本讨论 · 主理汇报");document.title=byId("title").textContent;
+for(const [label,key] of [["版本","version"],["范围","scope"],["评审方式","mode"]]){const span=document.createElement("span");span.textContent=label+"："+(asText(review[key])||"未登记");byId("meta").append(span);}
+write("notice",review.status,"未记录验收状态");write("conclusion",review.conclusion,"尚无结论");
+list("strengths",review.strengths,"尚未记录保留项");list("questions",review.questions,"未记录待决定项");
+function renderDiagram(issue){
+  const diagram=issue[version],chain=byId("chain");chain.replaceChildren();
+  const nodes=diagram&&Array.isArray(diagram.nodes)?diagram.nodes.filter(n=>n&&typeof n==="object"):[];
+  const labels={fact:"原稿事实",inference:"分析推断",proposal:"修改建议",gap:"待核验"};
+  nodes.forEach((node,index)=>{if(index){const arrow=document.createElement("span");arrow.className="arrow";arrow.textContent="→";arrow.setAttribute("aria-hidden","true");chain.append(arrow);}const type=Object.hasOwn(labels,node.type)?node.type:"gap";const box=document.createElement("div");box.className="chain-node "+type;const source=document.createElement("small");source.textContent=labels[type]+" · "+(asText(node.source)||"位置未记录");const text=document.createElement("b");text.textContent=asText(node.text)||"内容未记录";box.append(source,text);chain.append(box);});
+  write("caption",diagram?.caption,nodes.length?"图示说明未记录":version==="proposal"?"尚无修改方案；保留原稿，不代表已改稿。":"原稿图示尚未记录，请以原文依据为准。");
+  byId("original-button").setAttribute("aria-pressed",String(version==="original"));byId("proposal-button").setAttribute("aria-pressed",String(version==="proposal"));
+}
+function renderIssue(){
+  const issue=issues[selected];byId("empty").hidden=Boolean(issue);byId("issue-card").hidden=!issue;if(!issue)return;
+  write("issue-title",[asText(issue.id),asText(issue.title)].filter(Boolean).join(" · "));
+  write("location",issue.location);write("classification",[issue.kind,issue.impact].filter(v=>typeof v==="string"&&v).join(" · "));
+  write("evidence",issue.evidence,"未提供可定位原文：该判断应保留待核验");
+  const views=byId("views");views.replaceChildren();
+  for(const [label,key] of [["正方 · 为什么可能成立","positive"],["反方 · 最强质询","negative"],["人物 · 动机与关系","character"],["观众 · 信息与感受","audience"]]){const section=document.createElement("section");section.className="view";const h=document.createElement("h3");h.textContent=label;const p=document.createElement("p");p.textContent=asText(issue[key])||"本席意见未记录";section.append(h,p);views.append(section);}
+  write("decision","主理裁决："+(asText(issue.decision)||"未裁决"));write("reason",issue.reason);
+  write("uncertainty",issue.uncertainty?"保留异议／不确定项："+asText(issue.uncertainty):"尚未记录不确定项");write("task",issue.task);write("acceptance",issue.acceptance);
+  [...byId("issue-nav").children].forEach((b,i)=>b.setAttribute("aria-pressed",String(i===selected)));renderDiagram(issue);
+}
+issues.forEach((issue,index)=>{const button=document.createElement("button");button.type="button";button.textContent=[asText(issue.id),asText(issue.title)].filter(Boolean).join(" · ")||"未命名争议";button.addEventListener("click",()=>{selected=index;version="original";renderIssue();});byId("issue-nav").append(button);});
+byId("original-button").addEventListener("click",()=>{version="original";if(issues[selected])renderDiagram(issues[selected]);});byId("proposal-button").addEventListener("click",()=>{version="proposal";if(issues[selected])renderDiagram(issues[selected]);});renderIssue();
+</script>
+</body>
+</html>
