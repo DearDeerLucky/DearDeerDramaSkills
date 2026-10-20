@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "DearDeerDramaSkills",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "skills": [
     {
       "id": "dear-deer-drama-hub",
@@ -20,7 +20,7 @@
       "display_name": "短漫剧创作工作台",
       "distribution": "bundled",
       "source": "skills/dear-deer-drama-workbench",
-      "purpose": "N00—N15、LibTV 制作标准与提示词、五栏目剧本、Toonflow MCP 和成片交接",
+      "purpose": "N00—N15、LibTV 标准、五栏目、Toonflow Agent／MCP、Codex 原生生图、H3 与成片交接",
       "modes": [
         "plan",
         "create",
@@ -117,7 +117,7 @@
       "purpose": "真实AI人物动作视频生成",
       "status": "conditional-runtime-binding",
       "provided_by": "toonflowMcp",
-      "remaining": "MiniMovie 已有单图五秒分支；其他环境及新镜头需独立核验"
+      "remaining": "MiniMovie 已有 H3 原生音画、首尾帧／AV Guide 及质量优先 latent 续接试跑；当前模型、设备和新镜头需独立核验"
     },
     {
       "id": "tts",
@@ -154,13 +154,23 @@
       "runtime_profile": ".miniMovieSkill.json",
       "capabilities": [
         "script-documents",
+        "canvas-agent-local-codex",
+        "skill-read-and-cross-skill-routing",
+        "node-prompt-edit-and-readback",
+        "codex-native-reference-image-generation",
+        "original-image-persistence-and-node-backfill",
         "image-upscale",
         "silent-image-to-video",
         "native-audio-video",
+        "h3-keyframe-and-av-guide",
+        "h3-av-latent-continuation",
         "post-voice-subtitles-music"
       ],
       "limits": [
         "per-device-connection-verification",
+        "local-only-codex-native-provider",
+        "native-image-quality-and-size-auto",
+        "external-plugins-require-separate-binding",
         "per-shot-media-quality-review",
         "no-automatic-multi-shot-editing"
       ]

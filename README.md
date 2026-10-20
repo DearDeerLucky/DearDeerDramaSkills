@@ -63,6 +63,8 @@ MiniMovie 的项目绑定、具体节点与验证记录保存在创作目录或�
 
 ## 维护版本
 
+0.2.3 更新三个技能的 [Toonflow 桥接](skills/dear-deer-drama-workbench/references/toonflowBridge.md)：画布内本机 Codex Agent 与外部 MCP 的区别、跨技能读取、节点提示词改写及回读、Codex 原生双参考生图与原图回填、H3 首尾帧／Guide／AV latent 续接，以及原生 auto 尺寸和本地请求边界。两端技能需分别同步；外部插件仍单独绑定，具体技能调用链和媒体质量按当前任务实际验收。
+
 0.2.2 将完整CG角色包设为后续默认标准：[角色资产生产](skills/dear-deer-cg-character-assets/references/production-package.md)和[IP面板交付](skills/dear-deer-cg-character-assets/references/ip-panel-delivery.md)。标准人类角色包包含11张独立原图、3840×2160总览PNG、单页PDF、实际提示词、锁定卡、检查记录、便携清单和ZIP；从已选身份续做、逐图核验，再由原图固定排版。用户指定的小范围与特殊拓扑按实际任务调整，不把静态图片验收外推为动作、绑定或整集通过。
 
 0.2.1 补充 [整集制作与交付验收](skills/dear-deer-drama-workbench/references/episodeDelivery.md)：实际剪入时间线、原声保留或替换、任务续做与多设备交接、技术检查和整集视听证据。此次为规范与模板更新，不代表新增媒体工具或完成整集制作验收。

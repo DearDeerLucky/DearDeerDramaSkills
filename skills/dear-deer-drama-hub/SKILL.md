@@ -16,11 +16,13 @@ description: "漫剧总入口，用户称 /漫剧 时使用：管理 Dear Deer �
 - 故事、分集、任务卡、资产拆单、场景道具、分镜、资料网页和续做：`dear-deer-drama-workbench`。
 - CG角色五方向、多轮面部与服装配件细化、转绘或精修：`dear-deer-cg-character-assets`。
 - LibTV 五栏目剧本、制作标准、锚点与分镜提示词：工作台的 `libtvStandards.md` 和 `promptTemplates.md`，按当前阶段读取。
-- MiniMovie／Toonflow 的剧本节点、MCP 读写、图像放大、视频与声音回传：工作台的 `toonflowBridge.md`，先核对项目绑定和实时工具。
+- MiniMovie／Toonflow 的画布 Agent、本机 Codex CLI、原生生图、MCP 读写及 H3 音画续接：读取工作台的 [桥接说明](../dear-deer-drama-workbench/references/toonflowBridge.md)，先核对项目绑定和实时工具。
 - 实际图像、剪辑、字幕、导出或网页扩展：根据登记读取当前可用的外部 Skill 后操作。
 - 查看全流程能力、缺口或安装差异：展示目录和实际本机盘点，不把缺少视频工具误说成无法写剧本。
 
 读取相应 Skill 的当前完整入口和所需参考，再执行该任务；用户当前范围、已选素材和选择记录随交接保留。保持一项当前选择，候选不自动升级为正式资产。图片资产不等于工程三维模型，静态或图像运动不等于真实人物动作。
+
+在 Toonflow Agent 中先用 `skillOperator` 列出技能，再按名称读取本入口、目录和目标技能；跨技能资料以目标技能的 `name` 与根目录相对 `path` 读取，不把 `../` 路径交给同一技能冒充跨包访问。Codex 与 Toonflow 分别扫描各自安装目录，更新需同步两端；外部插件不随三个自有技能自动安装。实际画布与媒体操作走当前 Toonflow 工具，Codex 原生生图也经节点媒体供应商回填。
 
 ## 定位项目与安装
 

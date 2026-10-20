@@ -38,7 +38,7 @@ N10 配音、音乐与音效从 N02／N07 接入 N11；N14 连续性、版本与
 - 创建／更新资料网页、导入已有成果或展示角色多轮比较，读 [references/web-workbench.md](references/web-workbench.md)，复用内置模板。
 - 导入 LibTV 材料、整理五栏目剧本、资产锚点和分集制作标准，读 [references/libtvStandards.md](references/libtvStandards.md) 的当前环节。
 - 写大纲、分集、角色锚点、场景道具、分镜、视频或声音提示，按阶段选用 [references/promptTemplates.md](references/promptTemplates.md)，保留用户既定版本和授权。
-- 用户选用 MiniMovie／Toonflow 时，读 [references/toonflowBridge.md](references/toonflowBridge.md)：先只读核对实际 MCP 能力，再通过剧本文档或媒体工具操作，不直接改画布 JSON。
+- 用户选用 MiniMovie／Toonflow 时，读 [references/toonflowBridge.md](references/toonflowBridge.md)：区分画布内 Agent／本机 Codex CLI 与外部 MCP；先只读发现技能、节点及模型，再按当前授权改提示词、调用 Codex 原生生图或 ComfyUI/H3 并回读结果，不直接改画布 JSON。
 - 开始整集制作、判断能否完整成片或验收交付时，读 [references/episodeDelivery.md](references/episodeDelivery.md)：核对实际能力与验证范围、剪辑时间线、声音路线、续做记录及整集证据；单镜样片不能替代整集验收。
 
 搭建新工作台时，将 [assets/workbench-template.md](assets/workbench-template.md) 复制到创作目录，填入已有事实、当前状态和下一步；它含完整环节节点，不是空 Skill。已有工作台优先补齐，避免重复建稿。

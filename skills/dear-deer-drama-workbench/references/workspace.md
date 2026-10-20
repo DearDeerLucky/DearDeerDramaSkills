@@ -37,7 +37,7 @@ Codex 的文字、可用 imagegen 和 Remotion 路线见能力登记表，使用
 
 需要迁移时可按目标格式导出文字卡片与素材包；未经核验格式只能称节点清单或粘贴稿，不能声称可批量导入。选择外部工具不能自行改变画风、体量、成本或发布目标。
 
-MiniMovie／Toonflow 的已实现分支见 [toonflowBridge.md](toonflowBridge.md)。五栏目与分集通过 `scriptDocuments` 读写并携带 revision；实际模型、项目节点、局域网连接和历史验收在创作项目绑定及空间手册中维护，不固化在通用 Skill。其他设备可从同一 MCP 读取服务端技能与当前剧本，不需要将服务器路径改成本机路径。
+MiniMovie／Toonflow 的画布 Agent、本机 Codex CLI、生图与 H3 分支见 [toonflowBridge.md](toonflowBridge.md)。五栏目与分集通过 `scriptDocuments` 读写并携带 revision；节点提示词与媒体通过当前画布工具操作并回读。实际模型、项目节点、局域网连接和验收记录在创作项目绑定中维护，不固化在通用 Skill。其他设备可从同一 MCP 读取服务端技能与当前剧本，保留服务器路径；本机 Codex 生图的本地请求边界需独立核验。
 
 ## 重阶段与输出核验
 
