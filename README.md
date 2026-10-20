@@ -9,7 +9,7 @@
 | Skill | 用途 | 源文件 |
 |---|---|---|
 | `dear-deer-drama-hub` | 总管理、能力目录、路由、安装与版本维护 | [SKILL.md](skills/dear-deer-drama-hub/SKILL.md) |
-| `dear-deer-drama-workbench` | N00—N15 制作流程、五视角剧本讨论、图文汇报、卡片与资料网页 | [SKILL.md](skills/dear-deer-drama-workbench/SKILL.md) |
+| `dear-deer-drama-workbench` | N00—N15 制作流程、五视角剧本讨论、图文汇报、历史恢复与剧本归档、卡片与资料网页 | [SKILL.md](skills/dear-deer-drama-workbench/SKILL.md) |
 | `dear-deer-cg-character-assets` | 期望询问、五方向、多轮细化、CG资产图及定向修复 | [SKILL.md](skills/dear-deer-cg-character-assets/SKILL.md) |
 
 CG角色输出为渲染外观的图片。实际创建角色时，五方向及脸发、衣装选择默认配对应可见参考示例；只做文字或维护 Skill 时不自动生图。示例和正式母版分别记录，详见[选择示例规范](skills/dear-deer-cg-character-assets/references/selection-examples.md)。可绑定的工程模型、真实AI人物动作视频、正式TTS分别需要对应工具；能力状态见[目录](skills/dear-deer-drama-hub/references/catalog.json)。本地资料网页支持实际素材预览、待补占位、版本选用、本机保存、导入导出与角色多轮暂选。
@@ -35,6 +35,7 @@ python3 scripts/skills.py install --all
 $dear-deer-drama-hub 根据我当前的短剧任务，选择对应Skill。
 $dear-deer-drama-workbench 只测试任务卡设计，用我提供的素材。
 $dear-deer-drama-workbench 对附件第一集做正反方剧本讨论，五个角色参与，保留原稿，给图文主理汇报，先不改稿。
+$dear-deer-drama-workbench 恢复我指定作品的历史讨论与版本，保留原件，制作DOCX、PDF和ZIP归档；明确原话、转述、推定与缺失。
 $dear-deer-cg-character-assets 先询问期望，再提出五个具体方向并逐轮细化。
 ```
 
@@ -51,6 +52,8 @@ AGENTS.md                        项目协作与维护约定
 ```
 
 `SKILL.md` 提供当前流程入口，`references/` 保存按需读取的完整规范，`assets/` 保存模板。角色方向、细节、选择与生成记录遵循同一版本链；用户的剧本、原图和制作成果保存到独立创作目录。
+
+历史恢复与归档属于 N14，见[归档规范](skills/dear-deer-drama-workbench/references/script-archive.md)。同一长对话中的多个作品按用户确认的分支隔离；工具只返回片段或占位符时，不宣称完整历史已恢复。总稿、历史稿、未采用方案和规划内容分开，文件可打开、链接与ZIP校验按实际结果记录。
 
 ## 外部能力接入
 

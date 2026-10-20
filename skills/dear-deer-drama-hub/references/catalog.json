@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "DearDeerDramaSkills",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "skills": [
     {
       "id": "dear-deer-drama-hub",
@@ -20,13 +20,14 @@
       "display_name": "短漫剧创作工作台",
       "distribution": "bundled",
       "source": "skills/dear-deer-drama-workbench",
-      "purpose": "N00—N15 制作流程、五视角剧本讨论与图文汇报、资产卡、资料网页和成片交接",
+      "purpose": "N00—N15 制作流程、五视角剧本讨论与图文汇报、历史恢复与剧本归档、资产卡、资料网页和成片交接",
       "modes": [
         "plan",
         "create",
         "resume",
         "web-workbench",
-        "script-review"
+        "script-review",
+        "script-archive"
       ]
     },
     {

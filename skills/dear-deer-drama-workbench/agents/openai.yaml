@@ -1,4 +1,4 @@
 interface:
   display_name: "Dear Deer 短漫剧创作工作台"
-  short_description: "串联短漫剧制作，支持正反方剧本讨论、五视角评审、图文汇报和CG角色探索"
-  default_prompt: "使用 $dear-deer-drama-workbench，按当前阶段整理剧本与素材，按需开展正反方剧本讨论并给出图文主理汇报，或继续制作工作台。"
+  short_description: "串联短漫剧制作，支持五视角审稿、图文汇报、历史恢复与剧本归档"
+  default_prompt: "使用 $dear-deer-drama-workbench，按当前阶段继续创作、开展剧本讨论，或恢复指定作品分支并制作可追溯的剧本归档。"
