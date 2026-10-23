@@ -1,6 +1,6 @@
 ---
 name: dear-deer-drama-workbench
-description: "带新手在 Codex 制作 AI 短剧或漫剧，串联剧本、资产、分镜、声音与剪辑；支持五视角剧本讨论、图文汇报、历史版本恢复与可下载归档，可维护资料网页与待补节点。用于创作、审稿、剧本归档、视频提示词编制与模型适配或搭建制作流程，不用于普通视频剪辑或软件开发。"
+description: "带新手在 Codex 制作短剧或漫剧，串联剧本、资产、分镜、声音与剪辑；支持五视角审稿、历史归档、视频提示词编制与模型适配、LibTV 五栏目、Toonflow MCP 和资料网页。用于创作、续做、审稿、导入与流程维护，不用于普通视频剪辑或软件开发。"
 ---
 
 # Dear Deer 短漫剧创作工作台
@@ -38,6 +38,10 @@ N10 配音、音乐与音效从 N02／N07 接入 N11；N14 连续性、版本与
 - 保存跨会话工作台、选择工具或对接用户指定平台，读 [references/workspace.md](references/workspace.md)。
 - 创建／更新资料网页、导入已有成果或展示角色多轮比较，读 [references/web-workbench.md](references/web-workbench.md)，复用内置模板。
 - 整理旧对话、定稿或制作可下载剧本归档，读 [references/script-archive.md](references/script-archive.md)；接在 N14，不要求先完成视频制作。
+- 导入 LibTV 材料、整理五栏目剧本、资产锚点和分集制作标准，读 [references/libtvStandards.md](references/libtvStandards.md) 的当前环节。
+- 写大纲、分集、角色锚点、场景道具、分镜、视频或声音提示，按阶段选用 [references/promptTemplates.md](references/promptTemplates.md)，保留用户既定版本和授权。
+- 用户选用 MiniMovie／Toonflow 时，读 [references/toonflowBridge.md](references/toonflowBridge.md)：区分画布内 Agent／本机 Codex CLI 与外部 MCP；先只读发现技能、节点及模型，再按当前授权改提示词、调用 Codex 原生生图或 ComfyUI/H3 并回读结果，不直接改画布 JSON。
+- 开始整集制作、判断能否完整成片或验收交付时，读 [references/episodeDelivery.md](references/episodeDelivery.md)：核对实际能力与验证范围、剪辑时间线、声音路线、续做记录及整集证据；单镜样片不能替代整集验收。
 
 搭建新工作台时，将 [assets/workbench-template.md](assets/workbench-template.md) 复制到创作目录，填入已有事实、当前状态和下一步；它含完整环节节点，不是空 Skill。已有工作台优先补齐，避免重复建稿。
 
@@ -64,6 +68,8 @@ N10 配音、音乐与音效从 N02／N07 接入 N11；N14 连续性、版本与
 N04 的三维 CG 角色设计调用 `dear-deer-cg-character-assets`：期望询问 → 五个具体方向 → 整体／脸与头发／服装配件多轮选择 → 完整设计锁定 → 实际生成与定向修复 → 全身、身份近景及所需转面／表情／细节参考。执行前读取当前专用 Skill 入口；未选项保持候选。已有二维或CG母版的转换、修图保留已选身份，可以直接进入对应阶段。
 
 实际创建 CG 角色时，五方向和脸发／衣装各轮选择默认交付文字方案与对应可见参考示例，按角色专用 Skill 的选择示例规范复用已有图或生成最小小样；明确只做文字或维护 Skill 时不自动生图。角色图片不是工程三维模型。选择记录与实际图像可进入网页角色比较区；网页暂选不自动调用媒体工具或替换正式资产。
+
+完整CG角色包默认采用专用Skill的[生产规范](../dear-deer-cg-character-assets/references/production-package.md)和[IP面板交付标准](../dear-deer-cg-character-assets/references/ip-panel-delivery.md)：11张独立原图、4K总览PNG、单页PDF及提示词／锁定卡／检查清单。镜头分别引用独立身份、全身和细节图；面板用于审阅与交接。局部任务、特殊拓扑和用户指定范围按实际约定调整。
 
 ## 视频提示词创作与适配
 

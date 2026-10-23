@@ -1,4 +1,4 @@
 interface:
-  display_name: "Dear Deer 短剧 Skill 总管理"
-  short_description: "统一查看、选择和维护短剧技能，衔接工作台、CG角色、图片、剪辑与网页能力"
+  display_name: "漫剧"
+  short_description: "短漫剧总入口，衔接 LibTV 制作标准、剧本、CG角色、Toonflow MCP 与成片流程"
   default_prompt: "使用 $dear-deer-drama-hub，根据我当前的短剧创作任务，选择对应Skill并核对可用能力。"

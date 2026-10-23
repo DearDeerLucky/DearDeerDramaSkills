@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "project": "DearDeerDramaSkills",
-  "version": "0.1.4",
+  "version": "0.2.4",
   "skills": [
     {
       "id": "dear-deer-drama-hub",
-      "display_name": "短剧 Skill 总管理",
+      "display_name": "漫剧",
       "distribution": "bundled",
       "source": "skills/dear-deer-drama-hub",
-      "purpose": "能力目录、入口路由、本机盘点、安装和版本维护",
+      "purpose": "漫剧总入口、能力路由、本机盘点、安装和版本维护",
       "modes": [
         "catalog",
         "route",
@@ -20,7 +20,7 @@
       "display_name": "短漫剧创作工作台",
       "distribution": "bundled",
       "source": "skills/dear-deer-drama-workbench",
-      "purpose": "N00—N15 制作流程、五视角剧本讨论与图文汇报、历史恢复与剧本归档、视频提示词编制与模型适配、资产卡、资料网页和成片交接",
+      "purpose": "N00—N15、五视角审稿与归档、LibTV 五栏目、视频提示词与模型适配、Toonflow Agent／MCP、CG 及整集交接",
       "modes": [
         "plan",
         "create",
@@ -28,7 +28,9 @@
         "web-workbench",
         "script-review",
         "script-archive",
-        "video-prompting"
+        "video-prompting",
+        "libtv-reference",
+        "toonflow-mcp"
       ]
     },
     {
@@ -36,13 +38,15 @@
       "display_name": "3D CG 角色资产",
       "distribution": "bundled",
       "source": "skills/dear-deer-cg-character-assets",
-      "purpose": "询问期望、五方向文案与参考示例图、多轮细化、设计锁定、生成检查与修复",
+      "purpose": "角色探索与细化、设计锁定、11张原图生产检查、4K IP面板及可续做交接包",
       "modes": [
         "discover",
         "design",
         "convert",
         "generate",
-        "repair"
+        "repair",
+        "production-package",
+        "ip-panel-delivery"
       ]
     },
     {
@@ -114,17 +118,65 @@
     {
       "id": "ai-video",
       "purpose": "真实AI人物动作视频生成",
-      "status": "tool-binding-required"
+      "status": "conditional-runtime-binding",
+      "provided_by": "toonflowMcp",
+      "remaining": "MiniMovie 已有 H3 原生音画、首尾帧／AV Guide 及质量优先 latent 续接试跑；当前模型、设备和新镜头需独立核验"
     },
     {
       "id": "tts",
       "purpose": "正式角色配音与音效生成",
-      "status": "tool-binding-required"
+      "status": "partially-provided-by-runtime",
+      "provided_by": "toonflowMcp",
+      "remaining": "五秒后期离线配音与原生有声已接通，通用角色 TTS 和音效能力仍需绑定"
+    },
+    {
+      "id": "episode-delivery",
+      "purpose": "多镜头整集编排、混音与交付验收",
+      "status": "workflow-defined-end-to-end-verification-required",
+      "remaining": "已提供整集制作与验收规范；实际剪辑工具、完整导出及整集视听须逐项目验证，单镜样片不代表整集通过"
     },
     {
       "id": "3d-model",
       "purpose": "可绑定的工程三维模型",
       "status": "outside-cg-image-skill"
+    }
+  ],
+  "integrations": [
+    {
+      "id": "toonflowMcp",
+      "provider": "User-configured Toonflow MCP",
+      "purpose": "五栏目剧本与分集、素材回传及本地媒体流程",
+      "reference": "skills/dear-deer-drama-workbench/references/toonflowBridge.md",
+      "discovery_tools": [
+        "getAppState",
+        "listMediaModels",
+        "skillOperator",
+        "scriptDocuments"
+      ],
+      "status": "workflow-implemented-runtime-binding-required",
+      "runtime_profile": ".miniMovieSkill.json",
+      "capabilities": [
+        "script-documents",
+        "canvas-agent-local-codex",
+        "skill-read-and-cross-skill-routing",
+        "node-prompt-edit-and-readback",
+        "codex-native-reference-image-generation",
+        "original-image-persistence-and-node-backfill",
+        "image-upscale",
+        "silent-image-to-video",
+        "native-audio-video",
+        "h3-keyframe-and-av-guide",
+        "h3-av-latent-continuation",
+        "post-voice-subtitles-music"
+      ],
+      "limits": [
+        "per-device-connection-verification",
+        "local-only-codex-native-provider",
+        "native-image-quality-and-size-auto",
+        "external-plugins-require-separate-binding",
+        "per-shot-media-quality-review",
+        "no-automatic-multi-shot-editing"
+      ]
     }
   ]
 }
