@@ -6,7 +6,7 @@
 |---|---|---|
 | 从创意开始／继续剧本 | dear-deer-drama-workbench | 制作卡与当前节点；按需读取 N01／N02 |
 | /漫剧／参考 LibTV／导入五栏目剧本 | dear-deer-drama-hub → dear-deer-drama-workbench | 按当前阶段读取 [制作标准](../../dear-deer-drama-workbench/references/libtvStandards.md) 与 [提示词](../../dear-deer-drama-workbench/references/promptTemplates.md)，保留原稿和已选资产 |
-| Toonflow 画布 Agent／Codex CLI／MCP／H3 | dear-deer-drama-workbench＋实际 Toonflow 工具 | 读取 [桥接说明](../../dear-deer-drama-workbench/references/toonflowBridge.md)，区分画布内 Agent 和外部 MCP，核对绑定；技能读取、节点改写、真实生成与质量分别验收 |
+| Toonflow 画布 Agent／Codex CLI／MCP／H3 | dear-deer-drama-workbench＋实际 Toonflow 工具 | 读取 [桥接说明](../../dear-deer-drama-workbench/references/toonflowBridge.md) 及 H3 多图段，区分画布内 Agent 和外部 MCP，先查实时参考能力；技能读取、节点改写、真实生成与质量分别验收 |
 | 正反方剧本讨论／五视角审稿／图文主理汇报 | dear-deer-drama-workbench 剧本讨论模式 | 读取 references/script-review.md，固定稿件、作者目标与范围；按实际工具执行四席评审和主理裁决，不自动改稿 |
 | 整理旧对话／历史版本／可下载剧本总稿与归档 | dear-deer-drama-workbench 历史恢复与归档模式 | 读取 references/script-archive.md，隔离作品分支，核实母本和恢复覆盖；按需制作DOCX／PDF与ZIP，历史和缺口独立记录 |
 | 单独试用任务卡、场景卡或道具卡 | dear-deer-drama-workbench | 对应模板与必要输入，独立保存试用 |

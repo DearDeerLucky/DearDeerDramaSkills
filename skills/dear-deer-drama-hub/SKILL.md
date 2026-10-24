@@ -16,7 +16,7 @@ description: "漫剧总入口，用户称 /漫剧 时使用：管理 Dear Deer �
 - 故事、分集、任务卡、资产拆单、场景道具、分镜、资料网页和续做：`dear-deer-drama-workbench`。
 - CG角色五方向、多轮面部与服装配件细化、转绘或精修：`dear-deer-cg-character-assets`。
 - LibTV 五栏目剧本、制作标准、锚点与分镜提示词：工作台的 `libtvStandards.md` 和 `promptTemplates.md`，按当前阶段读取。
-- MiniMovie／Toonflow 的画布 Agent、本机 Codex CLI、原生生图、MCP 读写及 H3 音画续接：读取工作台的 [桥接说明](../dear-deer-drama-workbench/references/toonflowBridge.md)，先核对项目绑定和实时工具。
+- MiniMovie／Toonflow 的画布 Agent、本机 Codex CLI、原生生图、MCP 读写及 H3 多参考原生音画：读取工作台的 [桥接说明](../dear-deer-drama-workbench/references/toonflowBridge.md)，先核对项目绑定和实时模型；H3 的参考数量与输入模式按当前目录判断，不能沿用旧“仅单首帧”说明。
 - 实际图像、剪辑、字幕、导出或网页扩展：根据登记读取当前可用的外部 Skill 后操作。
 - 查看全流程能力、缺口或安装差异：展示目录和实际本机盘点，不把缺少视频工具误说成无法写剧本。
 

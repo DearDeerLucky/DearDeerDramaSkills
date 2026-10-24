@@ -67,6 +67,8 @@ MiniMovie 的项目绑定、具体节点与验证记录保存在创作目录或�
 
 ## 维护版本
 
+0.2.5 更新 H3 多图参考交接：当前三个本地视频选项支持 1—9 张独立图片，首帧与角色／道具参考分别绑定；入口路由、角色资产交接与 [Toonflow 桥接](skills/dear-deer-drama-workbench/references/toonflowBridge.md) 统一要求先查实时模型。明确三图实跑与其余组合参数核验的范围，不以旧单首帧说明限制新能力，也不把多图输入等同于作品质量验收。
+
 0.2.4 合并 LibTV、Toonflow、整集和 CG 生产能力与五视角审稿、历史归档；接入[视频提示词方法](skills/dear-deer-drama-workbench/references/video-prompting.md)、[MiniMax H3 适配](skills/dear-deer-drama-workbench/references/minimax-h3.md)和[逐镜记录模板](skills/dear-deer-drama-workbench/assets/video-prompt-card.md)。图像校对、真实模型输入、当前提示词与既有输出分别留证；外部画布中断先恢复真实状态再继续。匿名提取记录见 [本轮经验与集成说明](extractions/2026-10-23-video-prompting-and-canvas-recovery.md)。
 
 0.2.3 更新三个技能的 [Toonflow 桥接](skills/dear-deer-drama-workbench/references/toonflowBridge.md)：画布内本机 Codex Agent 与外部 MCP 的区别、跨技能读取、节点提示词改写及回读、Codex 原生双参考生图与原图回填、H3 首尾帧／Guide／AV latent 续接，以及原生 auto 尺寸和本地请求边界。两端技能需分别同步；外部插件仍单独绑定，具体技能调用链和媒体质量按当前任务实际验收。

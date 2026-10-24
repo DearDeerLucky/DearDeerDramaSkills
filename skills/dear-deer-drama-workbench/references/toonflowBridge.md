@@ -1,6 +1,6 @@
 # Toonflow Agent、Codex CLI 与 MCP 制作桥接
 
-用户选择 Toonflow 或 MiniMovie 时读取。2026-10-20 更新覆盖当前本机 Codex Agent、原生生图与 ComfyUI/H3 路线；其他安装仍以实时工具和参数为准。技能提供流程，安装、工具执行与作品质量分别验收。
+用户选择 Toonflow 或 MiniMovie 时读取。2026-10-24 更新包括 H3 单图／多参考图与当前三个视频选项；其他安装仍以实时工具和参数为准。技能提供流程，安装、工具执行与作品质量分别验收。
 
 ## 两种调用环境
 
@@ -87,14 +87,22 @@ MCP 回读比对精确 Markdown 与文件摘要，界面再核对实际正文。
 | --- | --- | --- |
 | N04／N08 原生图片 | codexNative / gpt-image-2 | 实际多图参考、原生 auto 尺寸／画质；本机 Codex 登录，原图落地及回填 |
 | N08 图像放大 | comfyLocal / remacri4x | 单张工作区图片，4 倍放大，保留比例 |
-| N09 无声图生视频 | comfyVideo / h3ImageToVideo5s | 单图、5 秒、576P 档位，实际尺寸随比例确定 |
-| N09 原生有声镜头 | comfyVideoAudio / h3NativeAudio5s | 单图、5 秒、576P，generateAudio=true；准确台词和运动提示，回看并试听 |
-| N09 动作原生音画 | comfyActionAudio / h3ActionAudio5s | 已有本地 5 秒打斗路线，generateAudio=true；当前角色、音效与动作逐镜检查 |
-| N09 首尾帧／Guide 续接 | comfyH3Keyframes、comfyH3MotionGuide 等当前已注册供应商 | 原生 first/last frame 或短 AV Guide 参与采样；查实际模型 ID、导出区间和引导帧数 |
-| N09 质量优先 AV latent 续接 | 当前项目绑定的 H3 质量供应商与 latent relay 工作流 | 已有原生 768P 五秒×2 试跑；后段必须使用对应前段真实 AV latent，不能拿任意旧 MP4 代替 |
+| N09 15 步 480P 抽卡 | comfyH3Draft / h3DraftNativeAudio5s48015 | 1—9 张图片，854×480、5 秒、24fps、120 帧，generateAudio=true |
+| N09 25 步 480P 抽卡 | comfyH3Draft / h3DraftNativeAudio5s480 | 1—9 张图片，854×480、5 秒、24fps、120 帧，generateAudio=true |
+| N09 原版 15 步 864P | comfyH3DramaMemory / h3DramaNativeAudio5s15 | 1—9 张图片，1536×864、5 秒、24fps、120 帧，generateAudio=true |
 | N10—N11 后期成片 | comfyFinish / localFinish5s | 已有 5 秒视频与最终台词，离线 Windows 配音、分句字幕与程序音乐；替换输入音轨 |
 
 外部已有图片先导入服务器工作区；当前 Codex 原生生图直接从已绑定工作区参考生成并保存。独立媒体生成通过当前 `generateImage` 或 `generateVideo` 等注册工具调用所选实际模型；节点生成优先走已绑定节点函数以便自动回填。上游返回并保存成功后，再把真实路径交给下游，连线不会自动跑完整条流程。
+
+### H3 多图参考的发现与绑定
+
+每次准备或续做 H3 视频，先查询实时 `listMediaModels`，再读取目标节点 `node:getConfig`。`mode` 中的数组 `["imageReference:9"]` 表示最多 9 张独立图片；不能根据模型显示名、旧技能或旧聊天中的“单首帧”推断当前不支持多图。本表是已接入配置的记录，实时目录不匹配时报告差异，不臆造模型或绕过权限。
+
+上述三个选项均支持一张首帧或合计 2—9 张图片。第 1 张是本镜开场构图与首帧，第 2—9 张按本镜需要选用当前锁定的角色全身／身份近景、道具或场景原图；不是强制凑满 9 张。核对节点实际图片引用顺序，在 H3 提示词中以 `<Picture 1>`、`<Picture 2>` 等绑定用途。例如：`Use <Picture 1> as the opening composition, <Picture 2> for the locked character identity and costume, and <Picture 3> for the crowbar shape.` 图片编号只按实际图片输入计数，不把文字、音频或视频引用混入；其他模型的参考语法不能照搬到 H3。
+
+节点多图使用现有“混合参考”模式 `mode: ["imageReference:9"]`，真实图片通过引用／连线或独立媒体调用的 `images` 顺序传入；当前这条路线不传 `firstFrame`／`lastFrame`，不接参考视频或参考音频。仅在提示词中写文件名、角色编号或图片标记，没有传入图片字节，不算使用参考。只有一张图时继续 `singleImage` 和原 FL2VA；多图自动使用原生 Ref2VA 配套权重、ReferenceToVideo 和第 0 帧 AddGuide。保留用户选择的步数、分辨率与 H3 原生音轨，不改走外部配音。
+
+当前实跑证据覆盖 15 步 480P 的三图完整生成；另外两档及 9 图上限完成请求图核验，不能声称全部组合已完成 GPU 或作品质量验收。多参考会增加耗时与显存需求，不保证逐帧人脸、道具或口型稳定。旧首尾帧、Guide、latent relay 等属于历史试跑路线，实时目录没有列出时不可当作当前可选模型。
 
 H3 质量优先路线按实际采样步数、原生分辨率、LoRA、工作流和音画条件记录，不为加快出片擅自降档。首尾姿态只限制图像状态，不能保证速度；短 Guide 或 latent relay 提供运动上下文，仍需观看交界两侧的方向、重心、速度与收腿落地。去除续接重复引导区时，画面和 H3 原声同区间裁切；不以贴帧、溶解或倍速掩盖问题。无对白／无人声／无配乐要求同时写入动作声音与整体声景；ASR/VAD 只能辅助，不能代替主观试听。改提示、采样、LoRA和续接方式同时变化时，不把改善单独归因于提示词。
 
